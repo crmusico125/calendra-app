@@ -1,6 +1,6 @@
 import { DAYS_OF_WEEK_IN_ORDER } from "@/constants"
 import { table } from "console"
-import { relations } from "drizzle-orm"
+import { desc, relations } from "drizzle-orm"
 import { boolean, index, integer, pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core"
 
 // Define a reusable `createAt` timestamp column with default value set to nows
@@ -15,6 +15,7 @@ export const EventTable = pgTable(
     {
         id: uuid("id").primaryKey().defaultRandom(),
         name: text("name").notNull(), // event name
+        description: text("description"), // optional event description
         durationInMinutes: integer("durationInMinutes").notNull(), // duration of the event
         clerkUserId: text("clerkUserId").notNull(), // ID of the user who created it (from Clerk)
         isActive: boolean("isActive").notNull().default(true), // whether the event is currently active
