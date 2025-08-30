@@ -94,3 +94,13 @@ export async function getEvents(clerkUserId: string): Promise<EventRow[]> {
     });
     return events;
 }
+
+// Fetch a specific event for a given user
+export async function getEvent(userId: string, eventId: string): Promise<EventRow | undefined> {
+  const event = await db.query.EventTable.findFirst({
+    where: ({ id, clerkUserId }, { and, eq }) =>
+      and(eq(clerkUserId, userId), eq(id, eventId)), // Make sure the event belongs to the user
+  })
+
+  return event ?? undefined // Explicitly return undefined if not found
+}
