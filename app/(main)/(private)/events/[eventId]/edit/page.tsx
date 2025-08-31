@@ -23,7 +23,6 @@ export default async function EditEventPage({
   const { eventId } = await params;
 
   const event = await getEvent(userId, eventId);
-  console.log("Event to edit:", event);
 
   if (!event) return <h1>Event not found</h1>;
 
