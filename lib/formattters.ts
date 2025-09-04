@@ -9,3 +9,14 @@ export function formatEventDescription(durationInMinutes: number): string {
     }`;
   }
 }
+
+
+
+export function formatTimezoneOffset(timezone: string) {
+  return new Intl.DateTimeFormat(undefined, {
+    timeZone: timezone,
+    timeZoneName: "shortOffset", // Request the short offset string
+  })
+  .formatToParts(new Date()) // Format the current date into parts
+  .find(part => part.type == "timeZoneName")?.value // Extract the timezone offset part
+}

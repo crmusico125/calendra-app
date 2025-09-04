@@ -236,7 +236,7 @@ export default function EventForm({
 
           {/* Save Button - submits the form */}
           <Button
-            className="cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600"
+            className="cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600 text-white"
             disabled={isDeletePending || form.formState.isSubmitting}
             type="submit"
           >

@@ -57,7 +57,7 @@ export default function EventCard({
         )}
 
         <Button
-          className="cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600"
+          className="cursor-pointer hover:scale-105 bg-blue-400 hover:bg-blue-600 text-white"
           asChild
         >
           <Link href={`/events/${id}/edit`}>Edit</Link>
