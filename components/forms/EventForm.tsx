@@ -163,6 +163,7 @@ export default function EventForm({
                   <Switch
                     checked={field.value}
                     onCheckedChange={field.onChange}
+                    className="bg-gray-200 data-[state=checked]:bg-blue-500 border border-gray-300"
                   />
                 </FormControl>
                 <FormLabel>Active</FormLabel>
