@@ -62,6 +62,7 @@ export default function EventForm({
       ? {
           // If `event` is provided (edit mode), spread its existing properties as default values
           ...event,
+          durationInMinutes: Number(event.durationInMinutes),
         }
       : {
           // If `event` is not provided (create mode), use these fallback defaults
